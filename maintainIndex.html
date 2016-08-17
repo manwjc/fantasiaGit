@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="cleartype" content="on">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+<link rel="dns-prefetch" href="//jiefangqu.com">
+
+<title>我的订单</title>
+<link rel="stylesheet" href="css/shopping.common.css">
+</head>
+
+<body>
+<div class="main-part01">  
+	<header class="sectionBox fantasia-header displaybox">
+		<div id="cityOrientation" class="mleft10 boxflex01">
+			<span class="mright5"><span id="curCity">正在定位…</span></span>
+			<div class="get-city-arrow disinline"></div>
+		</div>
+		<a class="disblock p010 boxflex01 t-right" href="myAppointment.html">
+			<img class="icon_appointment mright5" src="images/icon_appointment.png" />
+			<span>预约订单</span>
+		</a>
+	</header>
+	<section id="slideBox" class="slideBox mtop0">
+	    <div class="bd noborder">
+	        <ul>
+	            <li><img src="images/main_banner01.jpg" /></li>
+	        </ul>
+	    </div>
+	    <div class="hd">
+	        <ul></ul>
+	    </div>
+	</section>
+	<section class="sectionBox">
+		<ul class="maintain-menus t-center borderone">
+			<li class=" borderright"><a href="maintain-jiadianweixiu.html"><img class="wp18" style=" min-width: 27px !important;" src="images/icon_appliance_repair.png"/><div>家电维修</div></a></li>
+			<li class=" borderright"><a href="maintain-jiadianqingxi.html"><img src="images/icon_appliance_cleaning.png"/><div>家电清洗</div></a></li>
+			<li class=" borderright"><a href="maintain-anzhuang.html"><img src="images/icon_anzh.png"/><div>安装</div></a></li>
+			<li class=" borderright"><a href="maintain-jiadianqingxi.html"><img src="images/icon_appliance_cleaning.png"/><div>家电清洗</div></a></li>
+			<li class=" borderright"><a href="maintain-anzhuang.html"><img src="images/icon_anzh.png"/><div>安装</div></a></li>
+		</ul>
+	</section>
+</div>
+
+<div class="main-part02 dsn">    
+    <section class="sectionBox item-details-info pos-relative">
+        <section class="sectionBox password-mind-box bordertbgrey">
+            <div class="mleft15 grey">请选择您所在省市</div>
+        </section>
+        <ul class="register-list">
+            <li class="borderbottomgrey">
+                <select class="input-text wp100 list-arrow" datatype="*" nullmsg="请完善上门地址！" >
+                    <option style="color: #8e8e93;"  value="">选择省份</option>
+                    <option value="1">广东省</option>
+                    <option value="2">广西省</option>
+                </select>
+            </li>
+            <li>
+                <select id="city" class="input-text wp100 list-arrow" datatype="*" nullmsg="请完善上门地址！" >
+                    <option value="">选择城市</option>
+                    <option value="1">南宁</option>
+                    <option value="2">深圳</option>
+                </select>
+            </li>
+        </ul>
+        <div class="item-list-arrow-box p00 borderbottomgrey"><input class="btn-submit btn-next noradius bordertbgrey btnSubmit bgwhite red" type="button" name="button" value="确定"></div>
+    </section>
+    
+</div>
+
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/fastclick.js"></script>
+<script>
+	$(function(){
+		new FastClick(document.body);
+	})
+</script>
+<script src="js/Validform_v5.3.2.js"></script>
+<script src="js/TouchSlide.1.1.js"></script>
+<script>
+    TouchSlide({ 
+        slideCell:"#slideBox",
+        titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+        mainCell:".bd ul", 
+        effect:"left", 
+        autoPage:true,//自动分页
+        autoPlay:false //自动播放
+    });
+	
+	$(function(){
+		var $li = $('#slideBox .hd ul li');
+		if($li.length == 1){
+			$li.hide();
+		}
+		
+		//设置定位城市
+		var $mainPart01 = $('.main-part01');
+		var $mainPart02 = $('.main-part02');
+		$('#cityOrientation').click(function(){
+			$mainPart01.hide();
+			$mainPart02.show();
+		});
+		
+		$('.item-list-arrow-box').click(function(e){
+			var $city = $('#city');
+			if($city.val() !== ''){
+				var cityName = $('#city').find('option:selected').text();
+				$('#curCity').text(cityName);
+				$mainPart02.hide();
+				$mainPart01.show();
+			}else{
+				$.Showmsg('请选择城市');
+			}
+		});
+		
+		//去除底部线条
+		var $maintainMenus = $('.maintain-menus'),
+			liLength = $maintainMenus.find('li').length,
+			liLengthLeft = liLength%3;
+			
+		if(liLengthLeft == 0 && liLength > 3){
+			var leftGtNum = liLength - 4;
+			$maintainMenus.find('li:gt('+leftGtNum+')').addClass('noborderbottom');
+		}else if(liLengthLeft == 0 && liLength == 3){
+			$maintainMenus.find('li').addClass('noborderbottom');
+		}else if(liLengthLeft > 0){
+			var gtNum = liLength - liLengthLeft - 1;
+			$maintainMenus.find('li:gt('+gtNum+')').addClass('noborderbottom');
+		}
+		
+		$maintainMenus.find('li:eq(2),li:eq(5),li:eq(8)').removeClass('borderright');
+		
+	});
+	
+	$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function(){
+	    $('#curCity').html(remote_ip_info.city);
+	});
+</script>
+</body>
+</html>

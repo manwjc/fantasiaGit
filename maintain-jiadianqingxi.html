@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="cleartype" content="on">
+<meta http-equiv="cache-control" content="max-age=10000">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+<link rel="dns-prefetch" href="//jiefangqu.com">
+
+<title>家电清洗</title>
+<link rel="stylesheet" href="css/shopping.common.css">
+</head>
+
+<body class="bggrey">
+<section class="tabBox padding-menu pos-relative">
+    <section class="sectionBox password-mind-box bordertbgrey">
+        <div class="mleft15 grey">请选择服务类别</div>
+    </section>
+    <input type="hidden" datatype="*" nullmsg="请选择服务类别！" />
+    <ul class="sectionBox maintain-type-list bgwhite">
+    	<li><div class="list-icon f16 displaybox on"><img src="images/icon_ktqx.png"/><span class="boxflex01">空调清洗</span></div></li>
+    	<li><div class="list-icon f16 displaybox"><img src="images/icon_ktqx.png"/><span class="boxflex01">油烟机清洗油烟机清洗</span></div></li>
+    	<li><div class="list-icon f16 displaybox"><img src="images/icon_ktqx.png"/><span class="boxflex01">洗衣机清洗</span></div></li>
+    	<li><div class="list-icon f16 displaybox"><img src="images/icon_ktqx.png"/><span class="boxflex01">冰箱清洗</span></div></li>
+    </ul>
+    <section class="sectionBox password-mind-box bordertbgrey">
+        <div class="mleft15 grey">请选择机器类型</div>
+    </section>
+    <input type="hidden" datatype="*" nullmsg="请选择机器类型！" />
+    <ul class="sectionBox small-type-list bgwhite">
+    	<li class="displaybox"><div class="list-icon f16 boxflex01 on">空调清洗</div></li>
+    	<li class="displaybox"><div class="list-icon f16 boxflex01">油烟机清洗</div></li>
+    	<li class="displaybox"><div class="list-icon f16 boxflex01">冰箱清洗</div></li>
+    	<li class="displaybox"><div class="list-icon f16 boxflex01">油烟机清洗</div></li>
+    	<li class="displaybox"><div class="list-icon f16 boxflex01">油烟机清洗</div></li>
+    	<li class="displaybox"><div class="list-icon f16 boxflex01">油烟机清洗</div></li>
+    	<li class="displaybox"><div class="list-icon f16 boxflex01">油烟机清洗</div></li>
+    	<li class="displaybox"><div class="list-icon f16 boxflex01"></div></li>
+    </ul>
+    <section class="sectionBox password-mind-box bordertbgrey">
+        <div class="mleft15 grey">服务价格</div>
+    </section>
+    <div class="p15 bgwhite pos-relative borderbottomgrey">
+        <div class="item-standard-name f16">活动价：58元首台
+        	<span class="default-price f12 grey mleft10">原价 88元</span>
+        	<div class="f12 grey pt10">人工费+时段费+部分耗材费</div>
+        </div>
+    </div>
+    <section class="sectionBox password-mind-box marb20">
+        <div class="mleft15 f14">
+        	<a class="blue" href="serviceProcess.html">了解服务流程 <img class="align-sub w16" src="images/icon-estimate-price.png"/></a>
+        </div>
+    </section>
+    <ul class="bottom-menu-box displaybox t-center">
+        <li class="p00 boxflex01"><input class="btn-submit btn-next noradius bordertbgrey book-next-btn red" type="button" name="button" value="下一步"></li>
+    </ul>
+</section>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/Validform_v5.3.2.js"></script>
+<script type="text/javascript">
+$(function(){
+	//表单验证
+	$(".tabBox").Validform({
+		tiptype:1,
+		btnSubmit:".btn-submit",
+		callback:function(){
+	    	location.href = 'maintain-yuyue.html';
+		}
+	});
+	
+	//选择服务类别
+	$('.maintain-type-list li, .small-type-list li').click(function(){
+		$(this).parent().prev('input').val('1');
+	});
+	
+	//设置类型列表的底边框
+	function setTypeListBorder(obj,rowNum){
+		var $typeListLi = $(obj + ' li');
+		var liLength = $typeListLi.length;
+		var i = rowNum - 1;
+		
+		if(liLength > rowNum){
+			//底部边框
+			if(liLength%rowNum === 0){
+				$(obj + ' li:gt(' + (liLength - rowNum-1) + ')').addClass('noborderbottom');
+			}else{
+				$(obj + ' li:gt(' + (liLength - liLength%rowNum - 1) + ')').addClass('noborderbottom');
+			}
+			
+			//右边框
+			for(i; i < $typeListLi.length; i+=rowNum){
+				$typeListLi.eq(i).addClass('noborderright');
+			}
+		}else if(liLength < rowNum){
+			$typeListLi.addClass('noborderbottom');
+		}else{
+			$typeListLi.addClass('noborderbottom');
+			$typeListLi.eq(rowNum-1).addClass('noborderright');
+		}
+	}
+	//大类边框设置
+	setTypeListBorder('.maintain-type-list',2);
+	//小类边框设置
+	setTypeListBorder('.small-type-list',3);
+	
+	var reader = new FileReader();
+	reader.onload = function(callback) {
+		var md5 = rstr2hex(binl2rstr(binl_md5(reader.result, reader.result.length)));
+	}
+	
+});
+</script>
+</body>
+</html>

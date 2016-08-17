@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="cleartype" content="on">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+<link rel="dns-prefetch" href="//jiefangqu.com">
+
+<title>订单详情</title>
+<link rel="stylesheet" href="css/shopping.common.css">
+<link rel="stylesheet" href="dist/photoswipe.css">
+<link rel="stylesheet" href="dist/default-skin/default-skin.css">
+<style>
+.my-gallery {   width: 100%; float: left; }
+.my-gallery img { max-width: 100%; width: 90px; height:90px; }
+.my-gallery figure { display: block; float: left; margin: 0 5px 0 0; width: 90px; height:90px; }
+.my-gallery figcaption { display: none; }
+</style>
+</head>
+
+<body>
+<section id="wrapBox" class="sectionBox pos-relative minheight100">
+	<section id="tabBox" class="tabBox pos-relative minheight100 zindex10">
+	    <div class="bd my-order" id="tabBox-bd">
+	        <div class="myOrderList bgwhite">
+	           <div class="my-order-item">
+	           		<div class="order-steps">
+	           			<ul class="displaybox">
+	           				<li class="order-steps-dots bgorange"></li>
+	           				<li class="order-steps-line boxflex01 bgorange"></li>
+	           				<li class="order-steps-dots bgorange"></li>
+	           				<li class="order-steps-line boxflex01 bgorange"></li>
+	           				<li class="order-steps-dots bgorange"></li>
+	           				<li class="order-steps-line boxflex01 bgorange"></li>
+	           				<li class="order-steps-dots bgorange"></li>
+	           			</ul>
+	           			<ul class="displaybox mtop10 colorgrey">
+	           				<li class="wp14 t-left orange">提交</li>
+	           				<li class="boxflex01 t-center orange">系统派单</li>
+	           				<li class="boxflex01 t-center orange">师傅接单修理</li>
+	           				<li class="wp16 t-right orange">支付</li>
+	           			</ul>
+	           			
+	           		</div>
+					<section class="divide-box bordertbgrey"></section>
+					<section class="sectionBox addressInfo black paid-info">
+						<ul class="p10 t-center">
+					    	<li class="mtop5"><span class="f14 mright10 red">订单已支付</span></li>
+					    	<li class="paid-num lineheightnormal">￥60.20</li>
+					    	<li class="displaybox f14 lineheightnormal">
+					    		<div class="boxflex01 t-right mright10">
+					    			<div class="grey">人工费</div>
+					    			<div>￥20.00</div>
+					    		</div>
+					    		<div class="boxflex01 t-left mleft10">
+					    			<div class="grey">耗材费</div>
+					    			<div>￥40.20</div>
+					    		</div>
+					    	</li>
+					    </ul>
+					</section>
+					<section class="user-info-title bordertopgrey">
+						<span class="disblock p015 f12 grey lineheightnormal">
+					    	<span class="list-name">服务类型</span>下水道疏通<br/>
+					        <span class="list-name">创建时间</span>2015-12-24<br/>
+					        <span class="list-name">订单号</span>2015012619134000319860710</span>
+					</section>
+					<section class="divide-box bordertbgrey"></section>
+	               <div class="displaybox order-title-info">
+	                    <div class="order-title-time boxflex01 mleft10"><span class="f16">下水道疏通1</span><br><span class="grey">3天前 15:30</span></div>
+	                    <div class="order-title-buff mright15 orange"><img class="w10" src="images/icon_master.png" /> <span class="order-title-buff-text">已完成</span></div>
+	               </div>
+	               <div class="displaybox order-info-box bordertbgrey">
+	                    <ul class="order-info-address boxflex01">
+	                        <li class="icon-address"><span class="icon-address-text">星海名城1期A栋5008室</span></li>
+	                        <li class="icon-datetime mtop10">2015-12-22 10:30</li>
+	                    </ul>
+	               </div>
+				    <ul class="list-box bgwhite pb0">
+				        <li class="f14 lineheightnormal">马桶堵掉了，应该是被孩子的玩具弄到下水管道堵掉了，麻烦师傅快上门维修吧！</li>
+				    </ul>
+				    <section class="list-box bgwhite image-view pb20">
+				        <div class="my-gallery" itemscope>
+				            <figure class="mtop5" itemprop="associatedMedia" itemscope>
+				              <a href="images/1b.jpg" data-size="640x540">
+				                  <img src="images/1b.jpg" itemprop="thumbnail" alt="Image description" />
+				              </a>
+				            </figure>
+				            
+				            <figure class="mtop5" itemprop="associatedMedia" itemscope>
+				              <a href="images/no-img-bg.png" data-size="640x540">
+				                  <img src="images/no-img-bg.png" itemprop="thumbnail" alt="Image description" />
+				              </a>
+				            </figure>
+				            
+				            <figure class="mtop5" itemprop="associatedMedia" itemscope>
+				              <a href="images/no-img-bg.png" data-size="640x540">
+				                  <img src="images/no-img-bg.png" itemprop="thumbnail" alt="Image description" />
+				              </a>
+				            </figure>
+				        </div>
+				    </section>
+				
+				    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+				    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+				    
+				        <!-- Background of PhotoSwipe. 
+				             It's a separate element, as animating opacity is faster than rgba(). -->
+				        <div class="pswp__bg"></div>
+				    
+				        <!-- Slides wrapper with overflow:hidden. -->
+				        <div class="pswp__scroll-wrap">
+				    
+				            <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+				            <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+				            <div class="pswp__container">
+				                <div class="pswp__item"></div>
+				                <div class="pswp__item"></div>
+				                <div class="pswp__item"></div>
+				            </div>
+				    
+				            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+				            <div class="pswp__ui pswp__ui--hidden">
+				    
+				                    <div class="pswp__top-bar">
+				                    
+				                        <!--  Controls are self-explanatory. Order can be changed. -->
+				                    
+				                        <div class="pswp__counter"></div>
+				                    
+				                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+				                    
+				                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+				                    
+				                        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+				                        <!-- element will get class pswp__preloader--active when preloader is running -->
+				                        <div class="pswp__preloader">
+				                            <div class="pswp__preloader__icn">
+				                              <div class="pswp__preloader__cut">
+				                                <div class="pswp__preloader__donut"></div>
+				                              </div>
+				                            </div>
+				                        </div>
+				                    </div>
+				                    
+				                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+				                        <div class="pswp__share-tooltip"></div> 
+				                    </div>
+				                    
+				                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+				                    </button>
+				                    
+				                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+				                    </button>
+				                    
+				                    <div class="pswp__caption">
+				                        <div class="pswp__caption__center"></div>
+				                    </div>
+				    
+				              </div>
+				    
+				        </div>
+				    
+				    </div>
+					<section class="divide-box bordertbgrey"></section>
+	               <div class="displaybox order-info-box">
+	                    <div class="master-info-img"><img src="images/master_info_img.png" /></div>
+	                    <ul class="order-info-address boxflex01">
+	                        <li>
+	                        	<div class="icon-person master-info-name f16 lineheightnormal mtop3">李师傅</div>
+				            	<div class="star-box">
+				            		<div class="star-shape"><img src="images/stars_small.png" /></div>
+				            		<div class="star-bgred" data-width="86%"></div>
+				            		<div class="star-bggrey"></div>
+				            	</div>
+	                        </li>
+	                    </ul>
+	                    <div class="order-info-phone-call noborder"><a href="tel:400-960-2228"><img src="images/icon-phone-call.png" /></a></div>
+	               </div>
+					<section class="divide-box bordertbgrey"></section>
+				    <div class="list-box bgwhite">
+				        <div class="displaybox">
+				            <div class="item-standard-name height36 f16 boxflex01">联系客服</div>
+				            <div class="boxflex01 f16 t-right grey"><a class="green" href="tel:400-960-2228">400-960-2228</a></div>
+				        </div>
+				    </div>
+					<section class="divide-box bordertbgrey"></section>
+					<section class="divide-box bgwhite h57"></section>
+	           </div>
+	        </div>
+	    </div>
+	</section>
+	<section class="sectionBox wrap-bg evaluate_box hide">
+		<div class="wp100 wrap-bg evaluate_bg"></div>
+		<div class="tips-box f16 pb20">
+			<div class="tip-close-text">轻触关闭</div>
+			<div class="t-center mtop15 ptb20">评价本次服务</div>
+			<ul class="displaybox stars_list">
+				<li class="ptb10 mright10">服务效果</li>
+				<li class="boxflex01">
+					<ul class="displaybox evaluate_stars">
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+					</ul>	
+				</li>
+			</ul>
+			<ul class="displaybox stars_list">
+				<li class="ptb10 mright10">服务态度</li>
+				<li class="boxflex01">
+					<ul class="displaybox evaluate_stars">
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+					</ul>	
+				</li>
+			</ul>
+			<ul class="displaybox stars_list">
+				<li class="ptb10 mright10">服务速度</li>
+				<li class="boxflex01">
+					<ul class="displaybox evaluate_stars">
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+					</ul>	
+				</li>
+			</ul>	
+			<div id="evaluateSubmitBtn"><input class="btn-submit bgred white" type="button" value="提交" /></div>
+			<div class="wp100 t-center f14"><a class="blue" href="tel:400-960-2228">投诉</a></div>
+		</div>
+	</section>
+</section>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/fastclick.js"></script>
+<script>
+	$(function(){
+		new FastClick(document.body);
+		
+		//关闭评价浮层
+		$('.evaluate_bg, #evaluateSubmitBtn').click(function(){
+			$('#wrapBox').removeClass('heightp100');
+			$('.wrap-bg').addClass('hide');
+		});
+		
+		//选择星级
+		$(document).on('click', '.evaluate_stars li', function(){
+			var $this = $(this);
+			
+			if($this.hasClass('on') && !$this.next('li').hasClass('on')){
+				$this.removeClass('on').find('img').attr('src', 'images/star_grey.png');
+				$this.nextAll('li').removeClass('on').find('img').attr('src', 'images/star_grey.png');
+				
+			}else if($this.hasClass('on') && $this.next('li').hasClass('on')){
+				$this.nextAll('li').removeClass('on').find('img').attr('src', 'images/star_grey.png');
+				
+			}else{
+				$this.addClass('on').find('img').attr('src', 'images/star_red.png');
+				$this.prevAll('li').addClass('on').find('img').attr('src', 'images/star_red.png');	
+			}
+			
+			
+		});
+		
+		//调整外容器高度样式
+		$('.my-gallery figure').click(function(){
+			$('#wrapBox').addClass('heightp100');
+			var removeHeight = setInterval(function(){
+				if($('.pswp').is(':hidden') && $('#wrapBox').hasClass('heightp100')){
+					$('#wrapBox').removeClass('heightp100');
+				}
+			},100)
+		});
+	})
+</script>
+<script src="js/shopping.common.js"></script>
+<script src="dist/photoswipe.min.js"></script>
+<script src="dist/photoswipe-ui-default.min.js"></script>
+<script src="dist/index.js"></script>
+
+
+</body>
+</html>

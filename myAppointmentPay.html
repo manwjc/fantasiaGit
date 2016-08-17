@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="cleartype" content="on">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+<link rel="dns-prefetch" href="//jiefangqu.com">
+
+<title>订单支付</title>
+<link rel="stylesheet" href="css/shopping.common.css">
+</head>
+
+<body class="bggrey">
+<section id="tabBox" class="tabBox pos-relative check-pay-box bgwhite">
+    <div class="bd my-order" id="tabBox-bd">
+        <div class="myOrderList bgwhite">
+           <div class="my-order-item">
+               <div class="displaybox order-info-box ptb10 bordertopgrey pb0 pb10">
+                    <div class="master-info-img master-pay-img"><img src="images/master_info_img.png" /></div>
+                    <ul class="order-info-address boxflex01 lineheight180">
+                        <li>
+                        	<div class="icon-person master-info-name f16">李师傅</div>
+                        	<div class="f12">身份证：****451</div>
+                        	<div class="f12"><span class="icon_star on"></span><span class="icon_star on"></span><span class="icon_star on"></span><span class="icon_star on"></span><span class="icon_star"></span> <span class="grey">|</span> 12次</div>
+                        </li>
+                    </ul>
+                    <div class="order-info-phone-call noborder"><a href="tel:400-960-2228"><img src="images/icon-phone-call.png" /></a></div>
+               </div>
+				<section class="sectionBox addressInfo black paid-info bordertopgrey">
+					<ul class="p10 t-center">
+				    	<li class="mtop5"><span class="f14 mright10 grey">支付费用</span></li>
+				    	<li class="paid-num lineheightnormal">￥<span class="orderAmountPrice">60.20</span></li>
+				    	<li class="displaybox f14 lineheightnormal">
+				    		<div class="boxflex01 t-right mright10 borderright">
+				    			<div class="grey">人工费</div>
+				    			<div>￥20.00</div>
+				    		</div>
+				    		<div class="boxflex01 t-left mleft10">
+				    			<div class="grey">耗材费</div>
+				    			<div>￥40.20</div>
+				    		</div>
+				    	</li>
+				    </ul>
+				</section>
+				<section class="user-info-title bordertopgrey">
+					<span class="disblock p015 f12 grey lineheightnormal">
+				    	<span class="list-name">服务类型</span>下水道疏通<br/>
+				        <span class="list-name">创建时间</span>2015-12-24<br/>
+				        <span class="list-name">订单号</span>2015012619134000319860710</span>
+				</section>
+				<section class="divide-box bordertbgrey"></section>
+			    <section class="sectionBox">
+			        <ul class="user-menu-list m0">
+			            <li>
+			                <div class="left mtop5"><label id="allCheckBox" class="item-check-box single-check"></label ></div>
+			                <div class="prize-list"><span class="right grey"><img src="images/arrow-right.png" /></span> <span>消费券，使用3张<span class="un-use bgred mtop3">无可用</span></span></div>
+			            </li>
+			        </ul>
+			    </section>
+				<section class="divide-box bordertopgrey"></section>
+				<section class="divide-box bggrey h57"></section>
+           </div>
+        </div>
+    </div>
+    <ul class="bottom-menu-box displaybox t-left bordertopgrey">
+    	<li class="p00 boxflex01 f14 mleft15">实际付款：<span class="red bold f16">￥<span class="actuallyPaidPrice">60.20</span></span><br><span class="grey f12">消费券抵扣：￥<span class="discountPrice">0</span></span></li>
+    	<li class="p00 wp30"><input id="checkPayBtn" class="btn-submit bgred noradius btnSubmit" type="submit" name="submit" value="确认付款"></li>
+    </ul>
+</section>
+
+<div class="prize-box dsn">
+    <header class="sectionBox fantasia-header bordertopgrey">
+        <a id="prizeCancel" class="disblock p010 left w40" href="javascript:void(0)">取消</a>
+        <div class="header-title">消费券</div>
+        <a id="prizeCheck" class="disblock p010 right" href="javascript:void(0)"><span  class="red">确定</span></a>
+    </header>
+    <section class="divide-box bordertbgrey"></section>
+    <section class="sectionBox">
+        <ul class="item-price p10">
+            <li class="left">订单金额</li>
+            <li class="right"><span class="red bold f16">￥<span class="items-total orderAmountPrice">60.20</span></span></li>
+        </ul>
+        <ul class="item-price p10 bordertopgrey">
+            <li class="left">使用消费券抵扣(最多抵扣订单金额的40%)</li>
+            <li class="right"><span class="bold f16">￥<span class="prize-total">0.00</span></span></li>
+        </ul>
+    </section> 
+    <section class="divide-box bordertbgrey"></section>
+    <section class="sectionBox pb10">
+       <div class="info pb2 prizeListBox">
+            <div class="displaybox">
+                <div class="prize-check"><input id="cbox01" name="checkbox" type="checkbox" hidden="hidden" value="20" /><label for="cbox01" class="item-check-box single-check"></label ></div>
+		        <a class="record-list-bg boxflex01 mleft20" href="javascript:void(0)" target="_self">
+		            <ul class="displaybox record-list">
+		                <li class="head-img01"><img src="images/logo-jfq.png" /></li>
+		                <li class="record-txt boxflex01"><span class="f16">解放区消费券</span><br><span class="f12">有效期至：2015.04.16</span></li>
+		                <li class="money bold">￥20</li>
+		            </ul>
+		        </a>
+            </div>
+        </div>
+       <div class="info pb2 prizeListBox">
+            <div class="displaybox">
+                <div class="prize-check"><input id="cbox02" name="checkbox" type="checkbox" hidden="hidden" value="20" /><label for="cbox02" class="item-check-box single-check"></label ></div>
+		        <a class="record-list-bg boxflex01 mleft20" href="javascript:void(0)" target="_self">
+		            <ul class="displaybox record-list">
+		                <li class="head-img01"><img src="images/logo-jfq.png" /></li>
+		                <li class="record-txt boxflex01"><span class="f16">解放区消费券</span><br><span class="f12">有效期至：2015.04.16</span></li>
+		                <li class="money bold">￥20</li>
+		            </ul>
+		        </a>
+            </div>
+        </div>
+       <div class="info pb2 prizeListBox">
+            <div class="displaybox">
+                <div class="prize-check"><input id="cbox05" name="checkbox" type="checkbox" hidden="hidden" value="60" /><label for="cbox05" class="item-check-box single-check"></label ></div>
+		        <a class="record-list-bg boxflex01 mleft20" href="javascript:void(0)" target="_self">
+		            <ul class="displaybox record-list">
+		                <li class="head-img01"><img src="images/logo-jfq.png" /></li>
+		                <li class="record-txt boxflex01"><span class="f16">解放区消费券</span><br><span class="f12">有效期至：2015.04.16</span></li>
+		                <li class="money bold">￥60</li>
+		            </ul>
+		        </a>
+            </div>
+        </div>
+       <div class="info pb2 prizeListBox">
+            <div class="displaybox">
+                <div class="prize-check"><input id="cbox06" name="checkbox" type="checkbox" hidden="hidden" value="50" /><label for="cbox06" class="item-check-box single-check"></label ></div>
+		        <a class="record-list-bg boxflex01 mleft20" href="javascript:void(0)" target="_self">
+		            <ul class="displaybox record-list">
+		                <li class="head-img01"><img src="images/logo-jfq.png" /></li>
+		                <li class="record-txt boxflex01"><span class="f16">解放区消费券</span><br><span class="f12">有效期至：2015.04.16</span></li>
+		                <li class="money bold">￥50</li>
+		            </ul>
+		        </a>
+            </div>
+        </div>
+       <div class="info pb2 prizeListBox">
+            <div class="displaybox">
+                <div class="prize-check"><input id="cbox03" name="checkbox" type="checkbox" hidden="hidden" value="20" /><label for="cbox03" class="item-check-box single-check"></label ></div>
+		        <a class="record-list-bg boxflex01 mleft20" href="javascript:void(0)" target="_self">
+		            <ul class="displaybox record-list">
+		                <li class="head-img01"><img src="images/logo-jfq.png" /></li>
+		                <li class="record-txt boxflex01"><span class="f16">解放区消费券</span><br><span class="f12">有效期至：2015.04.16</span></li>
+		                <li class="money bold">￥20</li>
+		            </ul>
+		        </a>
+            </div>
+        </div>
+       <div class="info pb2 prizeListBox">
+            <div class="displaybox">
+                <div class="prize-check"><input id="cbox04" name="checkbox" type="checkbox" hidden="hidden" value="200" /><label for="cbox04" class="item-check-box single-check"></label ></div>
+		        <a class="record-list-bg boxflex01 mleft20" href="javascript:void(0)" target="_self">
+		            <ul class="displaybox record-list">
+		                <li class="head-img01"><img src="images/logo-jfq.png" /></li>
+		                <li class="record-txt boxflex01"><span class="f16">解放区消费券</span><br><span class="f12">有效期至：2015.04.16</span></li>
+		                <li class="money bold">￥200</li>
+		            </ul>
+		        </a>
+            </div>
+        </div>
+    </section>   
+    <section class="divide-box bordertopgrey"></section>
+</div>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/fastclick.js"></script>
+<script>
+	$(function(){
+		new FastClick(document.body);
+		
+		$('#checkPayBtn').click(function(){
+			location.href = 'payListDetails.html';
+		});
+	})
+</script>
+<script src="js/vouchers.js"></script>
+
+
+</body>
+</html>

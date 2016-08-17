@@ -1,0 +1,104 @@
+[
+{
+    "status": "0000",
+    "message": null,
+    "dataValue": {
+        "list": [
+            {
+                "id": 100241,
+                "prodName": "越南进口白肉火龙果2个装(约1斤/个)",
+                "price": 1,
+                "leftCount": 97,
+                "statusAudit": 4,
+                "picBase": "150703_hlg001.jpg",
+                "updTime": null
+            },
+            {
+                "id": 100243,
+                "prodName": "河北蜜梨6个装",
+                "price": 1,
+                "leftCount": 95,
+                "statusAudit": 4,
+                "picBase": "ea14bc7cb2f91d259f3286094ebcda7f.jpg",
+                "updTime": null
+            },
+            {
+                "id": 100505,
+                "prodName": "墨西哥进口牛油果8个装",
+                "price": 1,
+                "leftCount": 99,
+                "statusAudit": 4,
+                "picBase": "d21f12fad747ec116290470b26482100.jpg",
+                "updTime": null
+            },
+            {
+                "id": 100506,
+                "prodName": "新疆库尔勒香梨12个装",
+                "price": 1,
+                "leftCount": 99,
+                "statusAudit": 4,
+                "picBase": "150703_kelxl001.png",
+                "updTime": null
+            },
+            {
+                "id": 100508,
+                "prodName": "海南红心木瓜2个装0.9斤/个",
+                "price": 1,
+                "leftCount": 96,
+                "statusAudit": 4,
+                "picBase": "150703_hongxinmugua001.jpg",
+                "updTime": null
+            },
+            {
+                "id": 100509,
+                "prodName": "山东红富士苹果12个装约5-5.5斤",
+                "price": 1,
+                "leftCount": 98,
+                "statusAudit": 4,
+                "picBase": "861db8c6b25ec2f8ada014d417cae270.jpg",
+                "updTime": null
+            },
+            {
+                "id": 100512,
+                "prodName": "美国进口加力果6个装精选（约0.3斤/个）",
+                "price": 1,
+                "leftCount": 98,
+                "statusAudit": 4,
+                "picBase": "f4343979d317d61616c49fd715516640.jpg",
+                "updTime": null
+            },
+            {
+                "id": 100515,
+                "prodName": "山东黄金梨6个/盒",
+                "price": 1,
+                "leftCount": 98,
+                "statusAudit": 4,
+                "picBase": "a02b0fde69b4c6d25defd26fad9a45f1.jpg",
+                "updTime": null
+            },
+            {
+                "id": 100528,
+                "prodName": "菲律宾都乐菠萝/凤梨单个装约1.8斤/个",
+                "price": 1,
+                "leftCount": 89,
+                "statusAudit": 4,
+                "picBase": "e3931e40e4303b33e62176326f074f4b.jpg",
+                "updTime": null
+            },
+            {
+                "id": 100529,
+                "prodName": "山西贡梨6个装（约3.5斤）",
+                "price": 1,
+                "leftCount": 98,
+                "statusAudit": 4,
+                "picBase": "150703_sxgl001.jpg",
+                "updTime": null
+            }
+        ],
+        "hasNext": true,
+        "count": 15
+    },
+    "errcode": null,
+    "transNo": null
+}
+]

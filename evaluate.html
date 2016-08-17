@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="cleartype" content="on">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+<link rel="dns-prefetch" href="//jiefangqu.com">
+
+<title>订单详情</title>
+<link rel="stylesheet" href="css/shopping.common.css">
+</head>
+
+<body style="background:none">
+<section id="wrapBox" class="sectionBox pos-relative minheight100 heightp100">
+	<section class="sectionBox wrap-bg evaluate_box">
+		<div id="evaluateBg" class="wp100 wrap-bg evaluate_bg"></div>
+		<div class="tips-box f16 pb20">
+			<div class="tip-close-text">轻触关闭</div>
+			<div class="t-center mtop15 ptb20">评价本次服务</div>
+			<ul class="displaybox stars_list">
+				<li class="ptb10 mright10">服务效果</li>
+				<li class="boxflex01">
+					<ul class="displaybox evaluate_stars">
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+					</ul>	
+				</li>
+			</ul>
+			<ul class="displaybox stars_list">
+				<li class="ptb10 mright10">服务态度</li>
+				<li class="boxflex01">
+					<ul class="displaybox evaluate_stars">
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+					</ul>	
+				</li>
+			</ul>
+			<ul class="displaybox stars_list">
+				<li class="ptb10 mright10">服务速度</li>
+				<li class="boxflex01">
+					<ul class="displaybox evaluate_stars">
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+						<li class="boxflex01"><img src="images/star_grey.png"/></li>
+					</ul>	
+				</li>
+			</ul>	
+			<div id="evaluateSubmitBtn"><input class="btn-submit bgred white" type="button" value="提交" /></div>
+			<div class="wp100 t-center f14"><a class="blue" href="tel:400-960-2228">投诉</a></div>
+		</div>
+	</section>
+</section>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/fastclick.js"></script>
+<script>
+	$(function(){
+		new FastClick(document.body);
+		
+		//判断安卓ios系统
+		var u = navigator.userAgent, app = navigator.appVersion;
+		var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+		var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+		
+		//安卓
+		if(isAndroid){
+			//分享到好友
+			document.getElementById("evaluateSubmitBtn").onclick = function(){
+				window.evaluate.evaluateBtnClose();
+			};
+			//分享到朋友圈
+			document.getElementById("evaluateBg").onclick = function(){
+				window.evaluate.evaluateBgClose();
+			};
+		}
+		
+		//ios
+		if(isiOS){
+			//分享到好友
+			document.getElementById("evaluateSubmitBtn").onclick = function(){
+				document.location="jfq://"+'evaluateBtnClose';
+			};
+			//分享到朋友圈
+			document.getElementById("evaluateBg").onclick = function(){
+				document.location="jfq://"+'evaluateBgClose';
+			};
+		}
+		
+		//提交评价
+		$('#evaluateSubmitBtn').click(function(){
+			$.ajax({
+				url:"http://www.jiefangqu.com/LA/share/getShareParam.do",
+				data:{currentURL:'http://www.jiefangqu.com/LA/communityGold/index.jsp'},
+				dataType : "jsonp",	//数据类型为jsonp  
+        		jsonpCallback: "jsonpCallback",	//服务端用于接收callback调用的function名的参数
+				async:false,
+				success:function(data){
+					
+				}
+			});
+		});
+		
+		//选择星级
+		$(document).on('click', '.evaluate_stars li', function(){
+			var $this = $(this);
+			
+			if($this.hasClass('on') && !$this.next('li').hasClass('on')){
+				$this.removeClass('on').find('img').attr('src', 'images/star_grey.png');
+				$this.nextAll('li').removeClass('on').find('img').attr('src', 'images/star_grey.png');
+				
+			}else if($this.hasClass('on') && $this.next('li').hasClass('on')){
+				$this.nextAll('li').removeClass('on').find('img').attr('src', 'images/star_grey.png');
+				
+			}else{
+				$this.addClass('on').find('img').attr('src', 'images/star_red.png');
+				$this.prevAll('li').addClass('on').find('img').attr('src', 'images/star_red.png');	
+			}
+			
+			
+		});
+		
+	})
+</script>
+</body>
+</html>
